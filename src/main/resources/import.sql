@@ -6,7 +6,8 @@ insert into Dia_Semana(id, nome) values (5, 'Sexta-feira'  );
 insert into Dia_Semana(id, nome) values (6, 'Sábado'       );
 insert into Dia_Semana(id, nome) values (7, 'Domingo'      );
 
-insert into cidade(id, nome, latitude, longitude) values (1, 'São Paulo', '-23.550869', '-46.633211')
+insert into cidade(id, nome, latitude, longitude) values (1, 'São Paulo', '-23.550869', '-46.633211');
+insert into cidade(id, nome, latitude, longitude) values (2, 'Rio de Janeiro', '-25.550869', '-43.633211');
 
 insert into Previsao(id, dia_semana_id, cidade_id, tempMin, tempMax, umidade, descricao, latitude, longitude, hora) values (1, 1, 1, 18.0, 27.0, 30, 'Céu parcialmente nublado',            '-23.6436669', '-46.9005349', '2020-04-06 10:00:00');
 insert into Previsao(id, dia_semana_id, cidade_id, tempMin, tempMax, umidade, descricao, latitude, longitude, hora) values (2, 2, 1, 19.0, 27.0, 43, 'Céu parcialmente nublado',            '-23.6436669', '-46.9005349', '2020-04-07 10:00:00');

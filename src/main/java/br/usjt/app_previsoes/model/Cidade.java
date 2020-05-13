@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Cidade implements Serializable {
     private static final long serialVersionUID = 1L;
@@ -17,6 +19,7 @@ public class Cidade implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
     @OneToMany(mappedBy="cidade")
     private List<Previsao> previsoes;
 
@@ -26,6 +29,14 @@ public class Cidade implements Serializable {
 
     private String longitude;
 
+    public Long getId() {
+		return id;
+	}
+
+    public void setId(Long id) {
+		this.id = id;
+	}
+    
     public String getLatitude() {
         return latitude;
     }
@@ -50,6 +61,10 @@ public class Cidade implements Serializable {
         this.nome = nome;
     }
 
+    public List<Previsao> getPrevisoes() {
+		return previsoes;
+	}
+    
     public String toString() {
         return this.getNome() + " (" + this.getLatitude() + ", "  + this.getLongitude() + ")";
     }

@@ -9,6 +9,17 @@ import br.usjt.app_previsoes.controller.LoginInterceptor;
 public class AppConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-        registry.addInterceptor(new LoginInterceptor()).addPathPatterns("/**").excludePathPatterns("/login", "/", "/fazerLogin", "/webjars/**", "/bootstrap/**");
+        registry
+        	.addInterceptor(new LoginInterceptor())
+        	.addPathPatterns("/**")
+        	.excludePathPatterns(
+        		"/login",
+        		"/api/**",
+        		"/",
+        		"/fazerLogin",
+        		"/webjars/**",
+        		"/bootstrap/**"
+        	)
+        ;
     }
 }
